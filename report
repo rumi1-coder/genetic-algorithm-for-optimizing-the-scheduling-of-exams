@@ -1,0 +1,13 @@
+The code is an implementation of a genetic algorithm for optimizing the scheduling of exams for a university. The problem involves scheduling N courses into K exam halls, where each course has a specific set of time slots available for scheduling its exam, and each exam hall can be used for a certain number of hours per day. Additionally, some pairs of courses have conflicting students, meaning that they cannot be scheduled at the same time. The goal of the algorithm is to find a feasible and optimal schedule.
+
+The genetic algorithm works by generating a population of potential schedules and iteratively evolving them through selection, crossover, and mutation. The population is initialized with a random set of schedules, represented as binary strings where each gene in the chromosome represents a time slot for a specific course.
+
+The fitness of each schedule is evaluated using a fitness function that counts the number of conflicts between pairs of courses with conflicting students. The fitness function returns a score between 0 and 1, where higher scores indicate better schedules with fewer conflicts.
+
+The selection process uses tournament selection, where a group of potential parents are randomly selected from the population and the fittest individual is chosen as a parent. Crossover is then performed between pairs of parents, with a random point selected in the chromosome to exchange genes and create two children.
+
+Mutation is also applied to the children, where each gene has a certain probability of being flipped from 0 to 1 or vice versa. The mutated children are then added to the new generation of schedules.
+
+The algorithm continues to evolve the population for a certain number of generations, with each generation producing a new set of potential schedules. The final output of the algorithm is the best schedule in the last population, as determined by the fitness function.
+
+In the example usage provided, the genetic_algorithm function is called with a population size of 100, a mutation rate of 0.01, and 100 generations. The output is the best schedule found by the algorithm. The parameters can be adjusted to fine-tune the performance of the algorithm for different problem instances.
